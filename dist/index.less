@@ -1,0 +1,47 @@
+.user-operate-modal {
+    .ant-modal-content {
+        overflow: hidden;
+    }
+    .ant-modal-body {
+        padding: 0 !important;
+        height: 415px;
+
+        .pic {
+            width: 100%;
+            margin-bottom: 30px;
+            min-height: 222px;
+        }
+
+        .u-pic {
+            width: 100%;
+            margin-bottom: 40px;
+            min-height: 222px;
+            position: relative;
+            &.u-no-operate{
+                background: url("./sources/images/noOperate.jpg");
+                background-size:  100% 100%;
+            }
+            &.u-multiple{
+                background: url("./sources/images/multiple.jpg");
+                background-size:  100% 100%;
+            }
+        }
+
+        p {
+            text-align: center;
+            color: rgba(23,35,61,0.8);
+            line-height: 26px;
+            padding:0 20px;
+            margin-bottom:6px;
+        }
+
+        .btn {
+            text-align: center;
+            margin-top: 26px;
+
+            button {
+                width: 100px;
+            }
+        }
+    }
+}
