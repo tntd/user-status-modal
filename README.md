@@ -14,6 +14,8 @@
 |  modalCloseEvent  | 关闭弹窗回调。结合当前业务：如果未传此回调方法但传dispatch函数，默认执行 `dispatch({ type: "login/goLogin" });`  |
 |  noOperateTime  | 停留页面时间设置,`noOperate`场景中可按照实际情况设置，默认30分钟 |
 |  showModal  | `multiUser`多终端登录时可以根据用户传递控制是否显示弹窗，默认弹窗 |
+|  childrenDom  | 自定义弹窗内容 |
+|  closeModal  | 子组件暴露closeModal方法可供调用方关闭弹窗 |
 
 
 ```javascript
@@ -27,6 +29,16 @@
     modalCloseEvent={()=>{ // 点击弹窗确定回调
         console.log(2)
     }}
+    ref={noOperateRef}
+    childrenDom={
+        <div>
+            <p>dsada</p>
+            <p>dsada</p>
+            <button onClick={()=>{
+                noOperateRef?.current?.closeModal();
+            }}>hahah</button>
+        </div>
+    }
 />
 
 

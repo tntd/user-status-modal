@@ -1,11 +1,17 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, forwardRef, useImperativeHandle } from 'react';
 import { Modal, Button } from "antd";
 import userStatusLang from "../sources/lang";
 
-export default (props) => {
-    const { modalCloseEvent = void 0, modalShowEvent = void 0, dispatch, lang="cn" } = props;
+export default forwardRef((props,ref) => {
+    const { modalCloseEvent = void 0, modalShowEvent = void 0, dispatch, lang="cn", childrenDom=null } = props;
     const [ visible, setVisible ] = useState(false); // 弹窗
     const [ noOperateTime, setNoOperateTime ] = useState(props.noOperateTime || 1800000); // 默认30分钟
+
+    useImperativeHandle(ref, () => ({
+        closeModal:()=>{
+            setVisible(false);
+        }
+    }))
 
     const timer = useRef();
 
@@ -72,23 +78,29 @@ export default (props) => {
             width={450}
         >
             <div className="u-pic u-no-operate"></div>
-            <p>
-                {/* 您长时间未执行操作，系统已自动退出 */}
-                {userStatusLang.userStatusModal("noOperateContent",lang)}
-            </p>
-            <p>
-                {/* 点击确定重新登陆 */}
-                {userStatusLang.userStatusModal("warnMsg",lang)}
-            </p>
-            <div className="btn">
-                <Button
-                    type="primary"
-                    onClick={goToLogin}
-                >
-                    {/* 确定 */}
-                    {userStatusLang.userStatusModal("submit",lang)}
-                </Button>
-            </div>
+            { !!childrenDom && childrenDom }
+            {
+                !childrenDom &&
+                <>
+                    <p>
+                        {/* 您长时间未执行操作，系统已自动退出 */}
+                        {userStatusLang.userStatusModal("noOperateContent",lang)}
+                    </p>
+                    <p>
+                        {/* 点击确定重新登陆 */}
+                        {userStatusLang.userStatusModal("warnMsg",lang)}
+                    </p>
+                    <div className="btn">
+                        <Button
+                            type="primary"
+                            onClick={goToLogin}
+                        >
+                            {/* 确定 */}
+                            {userStatusLang.userStatusModal("submit",lang)}
+                        </Button>
+                    </div>
+                </>
+            }
         </Modal>
     );
-}
+})
