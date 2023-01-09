@@ -22,8 +22,7 @@ var _default = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
     modalCloseEvent = _props$modalCloseEven === void 0 ? void 0 : _props$modalCloseEven,
     dispatch = props.dispatch,
     showModal = props.showModal,
-    _props$lang = props.lang,
-    lang = _props$lang === void 0 ? "cn" : _props$lang,
+    lang = props.lang,
     _props$childrenDom = props.childrenDom,
     childrenDom = _props$childrenDom === void 0 ? null : _props$childrenDom;
   var hasShowModalProperty = props.hasOwnProperty("showModal");

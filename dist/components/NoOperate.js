@@ -23,8 +23,7 @@ var _default = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
     _props$modalShowEvent = props.modalShowEvent,
     modalShowEvent = _props$modalShowEvent === void 0 ? void 0 : _props$modalShowEvent,
     dispatch = props.dispatch,
-    _props$lang = props.lang,
-    lang = _props$lang === void 0 ? "cn" : _props$lang,
+    lang = props.lang,
     _props$childrenDom = props.childrenDom,
     childrenDom = _props$childrenDom === void 0 ? null : _props$childrenDom;
   var _useState = (0, _react.useState)(false),
