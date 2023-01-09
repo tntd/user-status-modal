@@ -1,25 +1,26 @@
-const userStatusModal = (field,lang) => {
-	lang = lang === "en" ? "en" : "cn";
-	let params = {
-		"noOperateContent": {
-			"cn": "您长时间未执行操作，系统已自动退出",
-			"en": "You haven't performed the operation for a long time, the system has exited automatically"
-		},
-		"otherLoginContent": {
-			"cn": "当前帐号在其他设备上登录",
-			"en": "Current account is logged in on other devices"
-        },
-        "warnMsg":{
-            "cn": "点击确定重新登录",
-			"en": "Click OK to log in again"
-        },
-		"submit": {
-			"cn": "确定",
-			"en": "Ok"
-		}
-	};
-	return params[field][lang];
+import Cookies from 'universal-cookie';
+import zh_CN from "./zh_CN"
+import en_US from './en_US';
+
+const cookies = new Cookies();
+
+const userStatusModal = (key, language, ...params) => {
+    console.log("language",language)
+	const text = ({
+        cn: zh_CN,
+        en: en_US,
+    }[language || getLanguage()] || zh_CN)?.[key];
+
+    if (params?.length) {
+        return params.reduce((acc, cur) => {
+          return acc.replace(/%s/, cur);
+        }, text);
+    }
+
+    return text;
 };
+
+export const getLanguage = () => cookies.get('lang', { path: '/' }) || 'cn';
 
 export default {
 	userStatusModal

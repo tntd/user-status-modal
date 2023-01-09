@@ -3,7 +3,7 @@ import { Modal, Button } from "antd";
 import userStatusLang from "../sources/lang";
 
 export default forwardRef((props,ref) => {
-    const { modalCloseEvent = void 0, dispatch, showModal, lang="cn", childrenDom=null } = props;
+    const { modalCloseEvent = void 0, dispatch, showModal, lang, childrenDom=null } = props;
     const hasShowModalProperty = props.hasOwnProperty("showModal");
     const defaultVisible = hasShowModalProperty ? showModal : true
     const [visible, setVisible] = useState(defaultVisible);

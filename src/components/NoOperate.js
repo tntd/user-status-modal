@@ -3,7 +3,7 @@ import { Modal, Button } from "antd";
 import userStatusLang from "../sources/lang";
 
 export default forwardRef((props,ref) => {
-    const { modalCloseEvent = void 0, modalShowEvent = void 0, dispatch, lang="cn", childrenDom=null } = props;
+    const { modalCloseEvent = void 0, modalShowEvent = void 0, dispatch, lang, childrenDom=null } = props;
     const [ visible, setVisible ] = useState(false); // 弹窗
     const [ noOperateTime, setNoOperateTime ] = useState(props.noOperateTime || 1800000); // 默认30分钟
 
