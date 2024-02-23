@@ -49,7 +49,7 @@ export default forwardRef((props,ref) => {
                 !childrenDom &&
                 <>
                      <p>
-                        {/* 当前帐号在其他设备上登录 */}
+                        {/* 当前账号在其他设备上登录 */}
                         {userStatusLang.userStatusModal("otherLoginContent",lang)}
                     </p>
                     <p>

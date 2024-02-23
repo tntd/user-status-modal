@@ -4,7 +4,7 @@ import { NoOperate, MultiUser } from "../src/index"; //"user-status-modal";
 const UserStatusModalExample = () => {
     const noOperateRef = useRef(null);
     return (
-        <NoOperate
+        <MultiUser
             ref={noOperateRef}
             lang="cn"
             showModal={true}
@@ -15,15 +15,15 @@ const UserStatusModalExample = () => {
             modalCloseEvent={()=>{ // 点击弹窗确定回调
                 console.log(2)
             }}
-            childrenDom={
-                <div>
-                    <p>dsada</p>
-                    <p>dsada</p>
-                    <button onClick={()=>{
-                        noOperateRef?.current?.closeModal();
-                    }}>hahah</button>
-                </div>
-            }
+            // childrenDom={
+            //     <div>
+            //         <p>dsada</p>
+            //         <p>dsada</p>
+            //         <button onClick={()=>{
+            //             noOperateRef?.current?.closeModal();
+            //         }}>hahah</button>
+            //     </div>
+            // }
         />
     )
 }
