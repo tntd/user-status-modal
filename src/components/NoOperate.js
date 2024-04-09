@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef, forwardRef, useImperativeHandle } from 'react';
-import { Modal, Button } from "antd";
+import { Modal, Button } from "tntd";
 import userStatusLang from "../sources/lang";
 
 export default forwardRef((props,ref) => {

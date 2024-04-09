@@ -21,29 +21,7 @@ let webpackConfig = {
 				test: /\.js$/,
 				exclude: /(node_modules|bower_components)/,
 				use: [{
-					loader: "babel-loader",
-					options: {
-						presets: [["@babel/preset-env"], "@babel/preset-react"],
-						plugins: [
-							[
-								"@babel/plugin-proposal-decorators",
-								{ legacy: true }
-							],
-							[
-								"@babel/plugin-proposal-class-properties",
-								{ loose: true }
-                            ],
-                            [
-								"import",
-								{
-									libraryName: "antd",
-									libraryDirectory: "lib",
-									style: true
-								}
-							],
-							"@babel/plugin-transform-runtime",
-						]
-					}
+					loader: "babel-loader?cacheDirectory=true"
 				}]
 			},
 			{
@@ -54,7 +32,12 @@ let webpackConfig = {
 					{
 						loader: "less-loader",
 						options: {
-							javascriptEnabled: true
+                            javascriptEnabled: true,
+                            modules: true,
+                            localIndexName: '[name]__[local]___[chunkhash:base64:5]',
+                            modifyVars: {
+                                hack: 'true; @import "~tntd/themes/default/variables.less";'
+                            }
 						}
 					}
 				]

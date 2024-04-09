@@ -5,6 +5,23 @@ const presets = [
 
 const plugins = [
     [
+        'import',
+        {
+            libraryName: 'antd',
+            libraryDirectory: 'es',
+            style: true,
+
+        },
+        "antd"
+    ],[
+        "import",
+        {
+            "libraryName": "tntd",
+            "libraryDirectory": "es"
+        },
+        "tntd"
+    ],
+    [
         '@babel/plugin-proposal-decorators',
         {
             legacy: true
@@ -21,20 +38,8 @@ const plugins = [
         {
             loose: true
         }
-    ],
-    // ['babel-plugin-styless']
+    ]
 ];
 
-if (!process.env.WEBPACK_DEV_SERVER) {
-    plugins.push([
-        'import',
-        {
-            libraryName: 'antd',
-            // libraryDirectory: 'es',
-            style: true,
-
-        }
-    ]);
-}
 
 module.exports = {presets, plugins};

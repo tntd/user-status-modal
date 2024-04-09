@@ -4,10 +4,8 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
-require("antd/lib/modal/style");
-var _modal = _interopRequireDefault(require("antd/lib/modal"));
-require("antd/lib/button/style");
-var _button = _interopRequireDefault(require("antd/lib/button"));
+var _modal = _interopRequireDefault(require("tntd/es/modal"));
+var _button = _interopRequireDefault(require("tntd/es/button"));
 var _react = require("react");
 var _lang = _interopRequireDefault(require("../sources/lang"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }

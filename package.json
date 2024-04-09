@@ -1,6 +1,6 @@
 {
   "name": "@tntd/user-status-modal",
-  "version": "1.0.20",
+  "version": "2.0.1",
   "description": "用户状态弹窗",
   "main": "./dist/index",
   "scripts": {
@@ -10,7 +10,8 @@
   "peerDependencies": {
     "react": ">=16.8.0",
     "react-dom": ">=16.8.0",
-    "antd": ">=3.20.1"
+    "antd": ">=3.20.1",
+    "tntd": ">=2.7.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.12.1",
@@ -23,6 +24,7 @@
     "@babel/preset-react": "^7.0.0",
     "@babel/types": "^7.4.4",
     "antd": "^3.25.3",
+    "tntd": "^2.7.28",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "babel-loader": "^8.0.6",
