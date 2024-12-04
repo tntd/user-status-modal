@@ -5,7 +5,6 @@ import en_US from './en_US';
 const cookies = new Cookies();
 
 const userStatusModal = (key, language, ...params) => {
-    console.log("language",language)
 	const text = ({
         cn: zh_CN,
         en: en_US,

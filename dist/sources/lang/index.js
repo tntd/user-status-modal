@@ -11,7 +11,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var cookies = new _universalCookie.default();
 var userStatusModal = function userStatusModal(key, language) {
   var _ref;
-  console.log("language", language);
   var text = (_ref = {
     cn: _zh_CN.default,
     en: _en_US.default
